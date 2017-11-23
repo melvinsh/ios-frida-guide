@@ -64,7 +64,7 @@ com.apple.mobilemail on (iPad: 9.3.5) [usb] # ios hooking set return_value "*[UI
 
 ## Frida scripts
 Logging arguments.
-```
+``` javascript
 var checkPassword = ObjC.classes.PasswordManager["- setNewPassword:withOldPassword:"];
 
 Interceptor.attach(checkHistory.implementation, {
@@ -82,7 +82,7 @@ Interceptor.attach(checkHistory.implementation, {
 ```
 
 Overwriting return value.
-```
+``` javascript
 var checkPin = ObjC.classes.PinScreen["- pinMatched:store:"];
 
 Interceptor.attach(checkPin.implementation, {
